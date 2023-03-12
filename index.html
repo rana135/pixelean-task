@@ -23,6 +23,84 @@
 
     <script>
         window.onload = function () {
+            var charts = new CanvasJS.Chart("chartContainer1", {
+                animationEnabled: true,
+                title: {
+                    text: "Abnormality Alerts"
+                },
+                axisX: {
+                    valueFormatString: "DDD",
+                    minimum: new Date(2017, 1, 5, 23),
+                    maximum: new Date(2017, 1, 12, 1)
+                },
+                axisY: {
+                    title: "Luffing wires"
+                },
+                legend: {
+                    verticalAlign: "top",
+                    horizontalAlign: "right",
+                    dockInsidePlotArea: true
+                },
+                toolTip: {
+                    shared: true
+                },
+                data: [{
+                    name: "Crane1",
+                    showInLegend: true,
+                    legendMarkerType: "square",
+                    type: "area",
+                    color: "rgb(106, 196, 70)",
+                    markerSize: 0,
+                    dataPoints: [
+                        { x: new Date(2017, 1, 6), y: 40 },
+                        { x: new Date(2017, 1, 7), y: 50 },
+                        { x: new Date(2017, 1, 8), y: 44 },
+                        { x: new Date(2017, 1, 9), y: 62 },
+                        { x: new Date(2017, 1, 10), y: 39 },
+                        { x: new Date(2017, 1, 11), y: 49 },
+                        { x: new Date(2017, 1, 12), y: 35 },
+                       
+                    ]
+                },
+                {
+                    name: "Crane2",
+                    showInLegend: true,
+                    legendMarkerType: "square",
+                    type: "line",
+                    color: "rgb(223, 206, 51)",
+                    markerSize: 0,
+                    dataPoints: [
+                        { x: new Date(2017, 1, 6), y: 52 },
+                        { x: new Date(2017, 1, 7), y: 64 },
+                        { x: new Date(2017, 1, 8), y: 59 },
+                        { x: new Date(2017, 1, 9), y: 70 },
+                        { x: new Date(2017, 1, 10), y: 63 },
+                        { x: new Date(2017, 1, 11), y: 65 },
+                        { x: new Date(2017, 1, 12), y: 52 }
+                    ]
+                },
+                {
+                    name: "Crane3",
+                    showInLegend: true,
+                    legendMarkerType: "square",
+                    type: "line",
+                    color: "rgb(217, 61, 46)",
+                    markerSize: 0,
+                    dataPoints: [
+                        { x: new Date(2017, 1, 6), y: 62 },
+                        { x: new Date(2017, 1, 7), y: 40 },
+                        { x: new Date(2017, 1, 8), y: 49 },
+                        { x: new Date(2017, 1, 9), y: 34 },
+                        { x: new Date(2017, 1, 10), y: 34 },
+                        { x: new Date(2017, 1, 11), y: 34 },
+                        { x: new Date(2017, 1, 12), y: 34 }
+                    ]
+                },
+            ]
+            });
+            charts.render();
+
+
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
                 // exportEnabled: true,
@@ -52,6 +130,7 @@
                     },
                 ],
             });
+
             chart.render();
         };
     </script>
@@ -197,7 +276,7 @@
                         Global Ship Report
                     </h2>
 
-                    <div >
+                    <div>
                         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="button">
@@ -283,7 +362,8 @@
                 <div class="cartComponent gap-x-5 gap-y-8 p-5">
                     <div class="card ">
 
-                        <div class="bgImage hover:bg-blue-600  bg-white from-green-200 to-green-100   rounded-lg shadow-xl p-5 hover:text-white">
+                        <div
+                            class="bgImage hover:bg-blue-600  bg-white from-green-200 to-green-100   rounded-lg shadow-xl p-5 hover:text-white">
                             <div class="flex flex-row justify-between items-center">
                                 <div class="flex-shrink pr-4">
                                     <div class="rounded-full p-3 bg-blue-600"><i
@@ -464,51 +544,8 @@
 
 
                 <div class="chartContainer">
-
-                    <div class="firstChart">
-
-                        <div class="bg-white border-transparent rounded-lg shadow-xl">
-                            <div
-                                class="bg-white from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                                <h class="font-bold uppercase text-gray-600">Graph</h>
-                            </div>
-                            <div class="p-5">
-                                <canvas id="chartjs-7" class="chartjs" width="undefined" height="undefined"></canvas>
-                                <script>
-                                    new Chart(document.getElementById("chartjs-7"), {
-                                        "type": "line",
-                                        "data": {
-                                            "labels": ["January", "February", "March", "April"],
-                                            "datasets": [{
-                                                "label": "Page Impressions",
-                                                "data": [10, 20, 15, 40],
-                                                "borderColor": "rgb(255, 99, 132)",
-                                                "backgroundColor": "rgba(255, 99, 132, 0.2)"
-                                            }, {
-                                                "label": "Adsense Clicks",
-                                                "data": [5, 15, 20, 30],
-                                                "type": "line",
-                                                "fill": false,
-                                                "borderColor": "rgb(54, 162, 235)"
-                                            }]
-                                        },
-                                        "options": {
-                                            "scales": {
-                                                "yAxes": [{
-                                                    "ticks": {
-                                                        "beginAtZero": true
-                                                    }
-                                                }]
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="chartContainer"></div>
+                    <div class="firstChart" id="chartContainer1"></div>
+                    <div class="secondChart" id="chartContainer"></div>
                 </div>
         </section>
     </div>

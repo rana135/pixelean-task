@@ -60,9 +60,8 @@
     gap: 15px;
   }
   .chartContainer {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: fit-content;
+    display: flex;
+    flex-direction: row;
   }
   .navContainer ul li a {
     font-size: xx-small;
@@ -137,5 +136,7 @@
   .secondChart {
     width: 99%;
   }
- 
+  .chartContainer {
+    display: flex;
+  }
 }
